@@ -44,11 +44,9 @@ public class PersonService {
 
 	public PersonDTO findById(Long id) throws PersonNotFoundException {
 		
-		//Person person = personRepository.findById(id)
-			//.orElseThrow(() -> new PersonNotFoundException(id));
-		
 		Person person = verifyIfExists(id);
 		
+// **** O código abaixo foi refatorado considerando as novas funcionalidades do Java 8 *****		
 //		Optional<Person> optionalPerson =  personRepository.findById(id);
 //		if(optionalPerson.isEmpty()) {
 //			throw new PersonNotFoundException(id);
