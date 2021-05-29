@@ -3,13 +3,10 @@ package one.digitalinnovation.personapi.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import one.digitalinnovation.personapi.dto.MessageResponseDTO;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.entity.Person;
@@ -44,11 +41,9 @@ public class PersonService {
 
 	public PersonDTO findById(Long id) throws PersonNotFoundException {
 		
-		//Person person = personRepository.findById(id)
-			//.orElseThrow(() -> new PersonNotFoundException(id));
-		
 		Person person = verifyIfExists(id);
 		
+// **** O código abaixo foi refatorado considerando as novas funcionalidades do Java 8 *****		
 //		Optional<Person> optionalPerson =  personRepository.findById(id);
 //		if(optionalPerson.isEmpty()) {
 //			throw new PersonNotFoundException(id);
